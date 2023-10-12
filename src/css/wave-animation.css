@@ -1,0 +1,74 @@
+body {
+    overflow: hidden;
+    /* background: #3586ff; */
+    background: #0049b7 !important;
+}
+
+section {
+    position: relative;
+    height: 10vh;
+}
+
+section .wave {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background: url("https://res.cloudinary.com/dtdhmbtcg/image/upload/v1697046111/virtual-labs/wave_z8dgsa.png");
+    background-size: 1000px 100px;
+}
+
+section .wave.wave1 {
+    animation: animate 30s linear infinite;
+    z-index: 1000;
+    opacity: 0.4;
+    animation-delay: 0s;
+    bottom: 0px;
+
+}
+
+section .wave.wave2 {
+    animation: animate2 15s linear infinite;
+    z-index: 999;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 10px;
+
+}
+
+section .wave.wave3 {
+    animation: animate 30s linear infinite;
+    z-index: 998;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 15px;
+
+}
+
+section .wave.wave4 {
+    animation: animate2 5s linear infinite;
+    z-index: 997;
+    opacity: 0.1;
+    animation-delay: -5s;
+    bottom: 20px;
+
+}
+
+@keyframes animate {
+    0% {
+        background-position-x: 0px;
+    }
+
+    100% {
+        background-position-x: 1000px;
+    }
+}
+
+@keyframes animate2 {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: 999px;
+    }
+}
