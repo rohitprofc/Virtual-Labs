@@ -1,0 +1,25 @@
+h1{
+    font-family: 'Fuggles', cursive;
+    font-size: 250px;
+}
+.tick{
+    position: absolute;
+    top:10vh;
+    left:30vw;
+}
+body{
+    background-color: antiquewhite;
+}
+button{
+    position: absolute;
+    top: 80vh;
+    left:40vw;
+    height: 7vh;
+    width:15vw;
+    border-radius: 1rem;
+    font-family: 'Fuggles', cursive;
+    font-size: 40px;
+}
+button:hover{
+    transform:scale(1.5)
+}

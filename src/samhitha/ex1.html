@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* CSS for the button container */
+        .button-container {
+            width: 20%; /* Set the width for the button container */
+            float: left; /* Float the container to the left */
+        }
+
+        /* CSS for the content container */
+        .content-container {
+            width: 80%; /* Set the width for the content container */
+            float: left; /* Float the container to the left */
+            padding-left: 20px; /* Add some padding to separate content from buttons */
+        }
+
+        /* CSS for the buttons */
+        .button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* CSS for the content */
+        .content {
+            display: none; /* Hide content by default */
+        }
+
+        /* Show content when a button is clicked */
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <!-- Create buttons -->
+        <button class="button" onclick="showContent('home')">Home</button>
+        <button class="button" onclick="showContent('calculation')">Calculation</button>
+        <button class="button" onclick="showContent('exam')">Exam</button>
+        <button class="button" onclick="showContent('results')">Results</button>
+    </div>
+    <div class="content-container">
+        <!-- Create content for each button -->
+        <div class="content" id="home-content">This is the Home content.</div>
+        <div class="content" id="calculation-content">This is the Calculation content.</div>
+        <div class="content" id="exam-content">This is the Exam content.</div>
+        <div class="content" id="results-content">This is the Results content.</div>
+    </div>
+
+    <script>
+        // JavaScript function to show content when a button is clicked
+        function showContent(contentId) {
+            // Hide all content
+            var contents = document.querySelectorAll('.content');
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = 'none';
+            }
+
+            // Show the selected content
+            document.getElementById(contentId + '-content').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

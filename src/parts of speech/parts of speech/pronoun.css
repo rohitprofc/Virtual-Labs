@@ -1,0 +1,119 @@
+body{
+    margin:0;
+    padding-left: 120px;
+    padding-right: 120px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: grey;
+}
+.container{
+    
+    
+    height: 100vh;
+    width:calc(100%-120px);
+    
+    display:grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows:repeat(2000,1fr) ;
+    background:white;
+}
+.learning{
+    grid-column-start:1;
+    grid-column-end:13;
+    grid-row-start:30;
+    grid-row-end:50;
+    display:grid;
+}
+.frame1{
+    grid-column-start:1;
+    grid-column-end:13;
+    grid-row-start:100;
+    grid-row-end:600;
+    display:grid;
+    grid-template-columns:1fr 8fr 1fr;
+    grid-template-rows:repeat(1,1fr) ;
+    background: var(--new-fill, #c9d263);
+    border-radius: 30px;
+    
+}
+.Example{
+    grid-column-start:1;
+    grid-column-end:13;
+    grid-row-start:700;
+    grid-row-end:720;
+    display:grid;
+    
+}
+.frame2{
+    grid-column-start:1;
+    grid-column-end:13;
+    grid-row-start:770;
+    grid-row-end:1270;
+    display:grid;
+    grid-template-columns:1fr 8fr 1fr;
+    grid-template-rows:repeat(1,1fr) ;
+    background: var(--new-fill, #63d282);
+    border-radius: 30px;
+    
+}
+.practice{
+    grid-column-start:1;
+    grid-column-end:13;
+    grid-row-start:1370;
+    grid-row-end:1390;
+    display:grid;
+}
+.frame3{
+    grid-column-start:1;
+    grid-column-end:13;
+    grid-row-start:1440;
+    grid-row-end:1940;
+    display:grid;
+    grid-template-columns:1fr 8fr 1fr;
+    grid-template-rows:repeat(1,1fr) ;
+    background: var(--new-fill, #63cbd2);
+    border-radius: 30px;
+    
+}
+
+.middlef1{
+    
+    font-size: large;
+  
+    
+}
+.leftf2{
+border-radius: 30px 0px 0px 30px;
+    
+}
+.rightf2{
+border-radius: 0px 30px 30px 0px;
+
+}
+.leftf3{
+  border-radius: 30px 0px 0px 30px;
+      
+  }
+  .rightf3{
+  border-radius: 0px 30px 30px 0px;
+  
+  }
+.middlef2{
+    padding-left:300px;
+    font-size: large;
+    padding-bottom: 70px;
+    
+}
+.middlef3{
+  font-size: large;
+  padding-left:35%;
+  padding-bottom: 20px;
+  
+}
+.red {
+  color: red;
+  cursor: pointer;
+}
+.green {
+  color: green;
+}

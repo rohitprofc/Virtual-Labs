@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice</title>
+    <link rel="stylesheet" href="practice.css">
+</head>
+<body>
+    <main>
+    <header>
+        <h1> Pronoun practice </h1>
+    </header>
+    <div class="practice">
+        <iframe  class="question" name="middlef3" src="" >
+
+        </iframe>
+        <div class="buttons">
+            <div class="prev">
+                <button class="btn" onclick="goToPreviousPagef3()">Previous</button>
+            </div>
+            <div class="nxt">
+                <button class="btn" onclick="goToNextPagef3()">Next</button>
+            </div>
+        </div>
+    </div>
+</main>
+    <script>
+        const pagesf3=['pronounf31.html', 'pronounf32.html', 'pronounf33.html','pronounf34.html','pronounf35.html']; 
+        let currentPageIndexf3 = 1;
+            
+        function loadPagef3(pageIndexf3) {
+            if (pageIndexf3 >= 1 && pageIndexf3 <= pagesf3.length) {
+                
+                const pagef3Url = pagesf3[pageIndexf3 - 1];
+                
+                document.getElementsByName('middlef3')[0].src = pagef3Url;
+                currentPageIndexf3 = pageIndexf3;
+            }
+        }
+        function goToPreviousPagef3() {
+            if (currentPageIndexf3 > 1) {
+                loadPagef3(currentPageIndexf3 - 1);
+            } else {
+                loadPagef3(pagesf3.length);
+            }
+        }
+        function goToNextPagef3() {
+            if (currentPageIndexf3 < pagesf3.length) {
+                loadPagef3(currentPageIndexf3 + 1);
+            } else {
+                loadPagef3(1);
+            }
+        }
+        loadPagef3(currentPageIndexf3);
+    </script>
+</body>
+</html>

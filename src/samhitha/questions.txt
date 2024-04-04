@@ -1,0 +1,267 @@
+1)Find the area of a triangle whose sides are 12 cm, 6 cm and 15 cm.
+Solution: Given the sides of a triangle are:
+
+a = 12 cm
+
+b = 6 cm
+
+c = 15 cm
+
+According to Heron’s formula;
+
+Area of triangle = √(s(s-a)(s-b)(s-c))
+
+s = (12 + 6 + 15)/2 = 33/2 = 16.5
+
+Area = √(16.5(16.5-12)(16.5-6)(16.5-15))
+
+= √(16.5 x 4.5 x 0.5 x 1.5)
+
+= 34.2 cm2
+
+Q.2: Find the Area of a Triangle whose two sides are 18 cm and 10 cm, respectively and the perimeter is 42 cm.
+
+Solution: Given two sides of a triangle are 18 cm and 10 cm, respectively.
+
+a = 18cm, b = 10 cm
+
+Perimeter of triangle = 42 cm
+
+a+b+c = 42
+
+18+10+c = 42
+
+c = 42 – 28 = 14 cm
+
+Using Heron’s formula, we have;
+
+Area of triangle = √(s(s-a)(s-b)(s-c))
+
+Semiperimeter, s = 42/2 = 21
+
+Area = √(21(21-18)(21-10)(21-14))
+
+= √(21 x 3 x 11 x 7)
+
+= 69.7 cm2
+
+Q.3: A triangular park has sides 120 m, 80 m and 50 m. A gardener has to put a fence all around it and also plant grass inside. How much area does he need to plant?
+
+Solution: Given,
+
+Sides of triangular park are 120m, 80m and 50m.
+
+Semiperimeter, s = (120 + 80 + 50)/2 = 125 m
+
+Using Heron’s formula, we have;
+
+Area of triangle = √(s(s-a)(s-b)(s-c))
+
+Area = √(125 (125-120) (125 – 80) (125 – 50)
+
+= √(125 x 75 x 45 x 5)
+
+= 375√15 m2
+Q.4: The sides of a triangle are in the ratio of 12: 17: 25 and its perimeter is 540 cm. Find its area.
+
+Solution: Given,
+
+Ratio of the sides of the triangle is 12: 17: 25
+
+Let the sides of triangle be 12x, 17x and 25x
+
+Given, perimeter of the triangle = 540 cm
+
+12x + 17x + 25x = 540 cm
+
+⇒ 54x = 540cm
+
+So, x = 10
+
+Thus, the sides of the triangle are:
+
+12 x 10 = 120 cm
+
+17 x 10 = 170 cm
+
+25 x 10 = 250 cm
+
+Semiperimeter, s = 540/2 = 270 cm
+
+Using Heron’s formula,
+
+Area of the triangle = √[s (s-a) (s-b) (s-c)]
+
+= √[270 (270 – 120) (270 – 170) (270 – 250)]
+
+= √(270 x 150 x 100 x 20)
+
+= 9000 cm2
+
+Q.5: Find the area of a triangle whose sides are 4.5 cm and 10 cm and perimeter 20.5 cm.
+
+Solution: Given,
+
+Side a = 4.5 cm
+
+Side b = 10 cm
+
+Perimeter of triangle = 20.5 cm
+
+a+b+c = 20.5
+
+4.5+10+c = 20.5
+
+14.5+c = 20.5
+
+c = 20.5 – 14.5
+
+c = 6 cm
+
+Semiperimeter, s = (4.5+10+6)/2 = 20.5/2 = 10.25 cm
+
+Using Heron’s formula,
+
+Area of the triangle = √[s (s-a) (s-b) (s-c)]
+
+Area = √[10.25(10.25-4.5) (10.25-10) (10.25-6)]
+
+Area = 7.91 cm2
+
+Q.6: What is the area of a triangle whose sides are 9 cm, 12 cm and 15 cm?
+
+Solution: Given, the sides of a triangle are:
+
+a = 9 cm
+
+b = 12 cm
+
+c = 15 cm
+
+Semiperimeter, s = (9 + 12 + 15)/2 = 36/2 = 18 cm
+
+According to Heron’s formula;
+
+Area of the triangle = √[s (s-a) (s-b) (s-c)]
+
+Area = √[18 (18 – 9) (18 – 12) (18 – 15)]
+
+Area = √[18 (9) (6) (3)]
+
+Area = 54 cm2
+
+Q.7: The perimeter of a right triangle is 300m. If its sides are in the ratio 3 : 5 : 7. Find the area of the triangle.
+
+Solution: Given,
+
+Perimeter of right triangle = 300 m
+
+Ratio of sides of triangle is 3 : 5 : 7
+
+Let the sides of triangle be:
+
+a = 3x
+
+b = 5x
+
+c = 7x
+
+Thus,
+
+3x + 5x + 7x = 300
+
+15x = 300
+
+x = 300/15 = 20
+
+Thus, the sides of triangle are:
+
+a = 3x = 3 (20) = 60 m
+
+b = 5x = 5 (20) = 100 m
+
+c = 7x = 7 (20) = 140 m
+
+Semiperimeter, s = 300/2 = 150 m
+
+Using Heron’s formula, we have;
+
+Area of the triangle = √[s (s-a) (s-b) (s-c)]
+
+Area = √(150 (150 – 60) (150 – 100) (150 – 140))
+
+Area = 1500√3 m2
+
+Q.8: The sides of a triangle are 7 cm, 9 cm, and 14 cm. What is the area of the triangle?
+
+Solution: Given,
+
+a = 7cm, b = 9 cm and c = 14 cm
+
+Semiperimeter, s = (7 + 9 + 14)/2 = 15 cm
+
+Area of triangle = = √[s (s-a) (s-b) (s-c)] By Heron’s formula.
+
+Area = √[15(15-7) (15-9) (15-14)]
+
+= √[(15) (8) (6) (1)]
+
+= 12√5 cm2
+
+Q.9: The sides of a triangle are 11 m, 60 m and 61 m. What is the altitude to the smallest side?
+
+Solution: Given, sides of the triangle are 11 m, 60 m and 61 m.
+
+The smallest side is 11 m.
+
+Thus,
+
+Area of triangle = ½ (base) (height)
+
+A = ½ (11) h ….(i)
+
+We can find the area of the triangle using Heron’s formula here.
+
+Area of triangle = = √[s (s-a) (s-b) (s-c)]
+
+s = (11+60+61)/2 = 66 m
+
+Area = √[66(66-11) (66-60) (66-61)]
+
+Area = √(66 x 55 x 6 x 5) = 330 m2
+
+Now putting the value of area in equation (i), we get;
+
+330 = ½ (11) h
+
+h = (2 x 330)/11 = 60m
+
+Therefore, the altitude to the smallest side is 60m.
+
+Q.10: If every side of a triangle is doubled, by what percentage is the area of the triangle increased?
+
+Solution: Let a, b and c be the sides of a triangle.
+
+Semiperimeter, s = (a+b+c)/2
+
+Now, if each of the side is doubled, then the new sides of a triangle are:
+
+A = 2a, B = 2b, C = 2c
+
+Semiperimeter, S = (A+B+C)/2 = (2a + 2b + 2c)/2 = 2s
+
+By Heron’s formula,
+
+Area of triangle, A’ = √[S (S-A) (S-B) (S-C)]
+
+A’ = √[2s(2s-2a)(2s-2b)(2s-2c)]
+
+A’ = √[2s2(s-a)2(s-b)2(s-c)]
+
+= 4√s(s-a)(s-b)(s-c)
+
+A’ = 4A
+
+Increase in Area = (4A – A)/A x 100% = 300%
+
+Hence, the area is increased by 300%, if the sides of the triangle are doubled.

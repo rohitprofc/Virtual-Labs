@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>verb example</title>
+    <link rel="stylesheet" href="example.css">
+</head>
+<body>
+    <header>
+        <h1> Pronoun Examples </h1>
+    </header>
+    <div class="right">
+        <div class="rl">
+            <!--<img src="left_arrow.png" width="100px" height="100px" onclick="goToPreviousPronounf2()">-->
+            <button class="btn" onclick="goToPreviousPronounf2()">Previous</button>
+        </div>
+        
+        <iframe  class="rm" name="middlef2" src="" ></iframe>
+        
+        <div class="rr">
+           <!-- <img src="right_arrow.png" width="100px" height="100px" onclick="goToNextPronounf2()">-->
+           <button class="btn" onclick="goToNextPronounf2()">Next</button>
+
+        </div>
+    </div>
+    <script>
+        //const nounsList = ["laptop"];  Add your list of nouns here
+        const pronoun = ['pronoun1.html', 'pronoun2.html', 'pronoun3.html','pronoun4.html','pronoun5.html']; // List of your pronoun pages
+        let currentPronounIndex = 1; // Index of the current pronoun page, starting from 1
+        
+        // Function to load a pronoun page into the middlef2 iframe
+        function loadPronoun(pronounIndex) {
+            if (pronounIndex >= 1 && pronounIndex <= pronoun.length) {
+                const pronounUrl = pronoun[pronounIndex - 1];
+                
+                document.getElementsByName('middlef2')[0].src = pronounUrl;
+               
+                currentPronounIndex = pronounIndex;
+            }
+        }
+            
+        // Function to go to the previous pronoun page
+        function goToPreviousPronounf2() {
+            if (currentPronounIndex > 1) {
+                loadPronoun(currentPronounIndex - 1);
+            } else {
+                // If on the first pronoun page, go to the last pronoun page (circular navigation)
+                loadPronoun(pronoun.length);
+            }
+        }
+    
+        // Function to go to the next pronoun page
+        function goToNextPronounf2() {
+            if (currentPronounIndex < pronoun.length) {
+                loadPronoun(currentPronounIndex + 1);
+            } else {
+                // If on the last pronoun page, go to the first pronoun page (circular navigation)
+                loadPronoun(1);
+            }
+        }
+        
+        // Initial page load
+        loadPronoun(currentPronounIndex);
+    </script>
+</body>
+</html>

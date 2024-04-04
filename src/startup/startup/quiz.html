@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Chemical Reactions Quiz</title>
+</head>
+<body>
+  <header>
+    <h1>Chemical Reactions Quiz</h1>
+  </header>
+
+
+
+  <section class="main">
+    <div class="sidebar">
+        <ul class="sidebar--items">
+            <li>
+                <a href="chemicalreactions.html" >
+                    <span class="button"></span>
+                    <div class="sidebar--item"><h1>Home</h1></div>
+                </a>
+            </li>
+          </ul>
+          </div>
+          </section>
+          
+
+
+
+
+  <main>
+    <!-- Add your quiz questions here -->
+    <div id="quizQuestions">
+      <!-- Question 1 -->
+      <div class="quizQuestion">
+        <h2>Question 1:</h2>
+        <img src="m1.jpg" alt="">
+        <div class="options">
+        <label>
+          <input type="radio" name="q1" value="a"> Option A
+        </label>
+        <label>
+          <input type="radio" name="q1" value="b"> Option B
+        </label>
+        </div>
+
+        <!-- Add more options as needed -->
+      </div class="">
+      <h2>Question 2:</h2>
+      <img src="m2.jpg" alt="">
+      <div class="options"><br>
+        <label>
+            <input type="radio" name="q1" value="a"> Option A
+        </label>
+        <label>
+            <input type="radio" name="q1" value="b"> Option B
+        </label>
+      </div>
+
+
+      <!-- Add more questions in a similar format -->
+    </div>
+
+    <!-- Display the score -->
+    <div id="quizScore">
+      <h2>Your Score:</h2>
+      <p id="score">0</p>
+    </div>
+    <div id="celebration-overlay">
+      <div id="celebration-container">
+        <img src="celebration1.gif" alt="Celebration GIF">
+      </div>
+    </div>
+
+  </main>
+
+  <script src="quiz.js"></script> <!-- Include JavaScript for quiz functionality -->
+</body>
+</html>

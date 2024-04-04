@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            text-align: center; /* Center-align text within the body */
+            background-color: #f5f5f5; /* Background color for the entire page */
+        }
+        p.hi {
+            font-family: Georgia, serif;
+            font-size: 18px;
+            margin-left: 20px; /* Add margin to the left to create space within the right frame */
+            margin-right: 20px; /* Add margin to the right to create space within the right frame */
+            color: #333; /* Text color for the paragraph */
+        }
+        .hi1 {
+            text-decoration: underline;
+            font-size: 30px;
+            color: #0066cc; /* Color for underlined text */
+        }
+        .hi2 {
+            font-size: 20px;
+            font-family: Georgia, serif;
+            color: #444; /* Color for the description text */
+        }
+    </style>
+</head>
+<body>
+    <h3 class="hi2">Description for calculating the Area of a Triangle using Heron's formula:</h3>
+    <p class="hi">Heron's formula is used to find the area of a triangle that has three sides. It is written as,
+        Area = sqrt[s(s-a)(s-b)(s-c)], where a, b, and c are the sides of the triangle, and 's' is the semi-perimeter
+        of the triangle i.e., s = a + b + c.<br><br>Here, first you want to enter the length of the sides of the triangle
+        to calculate the area, and there are two special cases:<br>
+        <span style="color: #ff5733;">Case 1:</span> The sum of the lengths of any two sides is equal to the length of the third side. In this case, the area
+        is "zero"<br>
+        <span style="color: #ff5733;">Case 2:</span> The sum of the lengths of any two sides is less than the length of the third side. In this case, the area
+        is "NaN"<br>
+    </p>
+    <img src="triangle.jpg" height="350" width="250">
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+       body.container {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #D1C4E9, #B2EBF2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #673AB7;
+    color: white;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #5E35B1;
+    transform: translateY(-2px);
+}
+
+.q {
+    /* Previous styles */
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    display: none; /* You may want to change this if you want it to be displayed */
+    flex-direction: row;
+    justify-content: space-between;
+    
+    /* New/updated styles */
+    position: absolute; /* or you could use 'relative' depending on your layout */
+    top: 10%;           /* Adjust this value to move the container up or down */
+    left: 25%;          /* This centers the container if width is 50% */
+    width: 50%;         /* This can be adjusted to a specific px or % value for your desired width */
+    height: 60%;        /* Set a specific height */
+}
+
+
+.q img {
+    width: 15%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.q img:hover {
+    transform: scale(1.1);
+}
+
+.q div {
+    width: 40%;
+}
+
+h1, h2 {
+    text-align: left;
+    margin: 15px 0;
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.5);
+}
+
+.btn1, .btn2, .btn3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.fas {
+    margin-left: 5px;
+}
+
+#submitButton img {
+    border-radius: 50%;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+#submitButton img:hover {
+    transform: scale(1.1);
+}
+
+
+
+.score-display {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+/* Ensure the HTML and body elements take up the full height of the viewport */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Optional: To prevent scrolling on the page */
+}
+
+.video-container {
+    position: fixed;   /* Fix the position of the video container */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;  /* Ensure no overflow from the container */
+    z-index: -1;       /* Set the video to be behind other content */
+}
+
+video {
+    position: absolute;  /* Absolute position within the fixed container */
+    min-width: 100%;     /* These rules will ensure the video scales */
+    min-height: 100%;    /* and maintains its aspect ratio */
+    width: auto;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  /* Center the video in the container */
+}
+
+    </style>
+    <script src="https://kit.fontawesome.com/fcb3095150.js" crossorigin="anonymous"></script>
+</head>
+<script>
+    let score = 0;
+    let currentQuestionIndex = 0;
+
+    function startQuiz() {
+        document.getElementById('startButton').style.display = 'none';
+        showQuestion(currentQuestionIndex);
+    }
+
+    function showQuestion(index) {
+        let questions = document.querySelectorAll('.q');
+        questions.forEach((question, i) => {
+            if (i === index) {
+                question.style.display = 'block';
+            } else {
+                question.style.display = 'none';
+            }
+        });
+
+        // Show or hide previous button
+        togglePreviousButton(index > 0);
+
+        // Show or hide submit button
+        toggleSubmitButton(index === questions.length);
+    }
+
+    function showNextQuestion() {
+    const currentQuestion = document.querySelectorAll('.q')[currentQuestionIndex];
+    const selectedOption = currentQuestion.querySelector('input[name="ans' + (currentQuestionIndex + 1) + '"]:checked');
+
+    if (selectedOption) {
+        currentQuestionIndex++;
+        showQuestion(currentQuestionIndex);
+    } else {
+        alert('Please select an option before proceeding.');
+    }
+    }
+
+    function showPreviousQuestion() {
+        currentQuestionIndex--;
+        showQuestion(currentQuestionIndex);
+    }
+
+    function togglePreviousButton(show) {
+        const previousButtons = document.querySelectorAll('.btn-previous');
+        previousButtons.forEach(button => {
+            if (show) {
+                button.style.display = 'inline-block';
+            } else {
+                button.style.display = 'none';
+            }
+        });
+    }
+
+    function toggleSubmitButton(show) {
+        const submitButton = document.getElementById('submitButton');
+        if (show) {
+            submitButton.style.display = 'inline-block';
+        } else {
+            submitButton.style.display = 'none';
+        }
+    }
+
+    function showScore() {
+        score=0;
+        let questions = document.querySelectorAll('.q');
+        questions.forEach((question,index) => {
+            const selectedOption = question.querySelector('input:checked');
+            if (selectedOption) {
+            // Modify the values based on the correct answers for each question
+            if ((index === 0 && selectedOption.value === 'Lungs') ||
+                (index === 1 && selectedOption.value === 'Nose') ||
+                (index === 2 && selectedOption.value === 'Hand')) {
+                score++;
+            }
+        }
+    });
+
+    const scoreDisplay = document.createElement('div');
+    scoreDisplay.innerHTML = `Your score is: ${score}`;
+    scoreDisplay.classList.add('score-display');
+    document.body.appendChild(scoreDisplay);
+
+    // Animate the score display
+    scoreDisplay.style.animation = 'fadeIn 2s forwards';
+
+    setTimeout(() => {
+        window.location.href = 'start.html'; 
+    }, 2000); 
+    }
+</script>
+<body class="container">
+<div class="video-container">
+    <video autoplay loop muted>
+        <source src="bgvideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+    <button id="startButton" onclick="startQuiz()"><h2 class="quiz">Start Quiz</h2></button>
+    <div class="q q1">
+        <h1>Q1. What is the name of the organ we use to breathe?</h1>
+        <img class="img1" src="wind.jpg" alt="wind">
+        <h2><input type="radio" name="ans1" value="Ears">Ears</h2>
+        <h2><input type="radio" name="ans1" value="Lungs">Lungs</h2>
+        <h2><input type="radio" name="ans1" value="Eyes">Eyes</h2>
+        <h2><input type="radio" name="ans1" value="Legs">Legs</h2>
+        <button class="btn-previous" id="previousButton" style="display: none;" onclick="showPreviousQuestion()">Previous <i style="font-size: 15px" class="fas">&#xf101;</i></button>
+        <button class="btn1" onclick="showNextQuestion()">Next <i style="font-size: 15px" class="fas">&#xf101;</i></button>
+    </div>
+
+    <div class="q q2">
+        <h1>Q2. What part of our body do we use to smell?</h1>
+        <img class="img2" src="second.jpg">
+        <h2><input type="radio" name="ans2" value="Eyes">Eyes</h2>
+        <h2><input type="radio" name="ans2" value="Hands">Hands</h2>
+        <h2><input type="radio" name="ans2" value="Ears">Ears</h2>
+        <h2><input type="radio" name="ans2" value="Nose">Nose</h2>
+        <button class="btn-previous" id="previousButton" style="display: none;" onclick="showPreviousQuestion()">Previous</button>
+        <button class="btn2" onclick="showNextQuestion()">Next <i style="font-size: 15px" class="fas">&#xf101;</i></button>
+    </div>
+
+    <div class="q q3">
+        <h1>Q3. Observe the below image and name the part of Human Body</h1>
+        <img class="img3" src="hand.jpg" alt="Mount Everest">
+        <h2><input type="radio" name="ans3" value="Hand">Hand</h2>
+        <h2><input type="radio" name="ans3" value="Stomach">Stomach</h2>
+        <h2><input type="radio" name="ans3" value="Legs">Legs</h2>
+        <h2><input type="radio" name="ans3" value="Mouth">Mouth</h2>
+        <button class="btn-previous" id="previousButton" style="display: none;" onclick="showPreviousQuestion()">Previous</button>
+        <button class="btn3" onclick="showNextQuestion()">Next <i style="font-size: 15px" class="fas">&#xf101;</i></button>
+    </div>
+
+    <div>
+        <button id="submitButton" onclick="showScore()"><img src="submit.png" width="200px" height="200px" style="background:none;"></button>
+    </div>
+</body>
+</html>

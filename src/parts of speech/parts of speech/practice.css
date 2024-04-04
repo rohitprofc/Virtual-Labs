@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden; /* Hide scrollbars to prevent scrolling */
+}
+
+main {
+    height: 100vh; /* Adjust as needed */
+    overflow: hidden; /* Hide overflow content */
+}
+
+.practice {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Fill the available vertical space */
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.question {
+    width: 100%;
+    padding: 20px;
+    height:90vh;
+    background-color: white;
+    margin-bottom: 20px;
+    overflow: hidden; /* Hide overflow content in the question area */
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+    margin-left: 50px;
+    overflow: hidden; /* Hide overflow content in the buttons area */
+}
+
+/* Add any other styles you need */
+
+/*.rm {
+    width: 80%;
+    padding: 20px;
+    background-color:white;
+}
+.rr {
+    width: 10%;
+    padding-top: 100px;
+    padding-left: 10px;
+    background-color:white;
+    text-align: center;
+}*/
+header{
+    text-align: center;
+    text-decoration-line:underline;
+    height: 30px;
+    margin-bottom: 20px;
+}
+.prev{
+    margin-right: 800px;
+}
+.btn{
+    border-radius: 20px;
+    width: 120px;
+    height: 60px;
+    color:white;
+    background-color: #9D76C1;}
+#messageBox {
+    display: none;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+#correctImage, #wrongImage {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+}

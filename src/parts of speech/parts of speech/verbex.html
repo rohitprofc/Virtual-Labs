@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>verb example</title>
+    <link rel="stylesheet" href="example.css">
+</head>
+<body>
+    <header>
+        <h1> Verb Examples </h1>
+    </header>
+    <div class="right">
+        <div class="rl">
+            <!--<img src="left_arrow.png" width="100px" height="100px" onclick="goToPreviousPagef2()">-->
+            <button class="btn" onclick="goToPreviousPagef2()">Previous</button>
+        </div>
+        
+        <iframe  class="rm" name="middlef2" src="" ></iframe>
+        
+        <div class="rr">
+           <!-- <img src="right_arrow.png" width="100px" height="100px" onclick="goToNextPagef2()">-->
+           <button class="btn" onclick="goToNextPagef2()">Next</button>
+
+        </div>
+    </div>
+    <script>
+        //const nounsList = ["laptop"];  Add your list of nouns here
+        const pages = ['verb1.html', 'verb2.html', 'verb3.html','verb4.html','verb5.html']; // List of your pages
+        let currentPageIndex = 1; // Index of the current page, starting from 1
+        // Function to load a page into the middlef2 iframe
+        function loadPage(pageIndex) {
+            if (pageIndex >= 1 && pageIndex <= pages.length) {
+                const pageUrl = pages[pageIndex - 1];
+                
+                document.getElementsByName('middlef2')[0].src = pageUrl;
+               
+                currentPageIndex = pageIndex;
+            }
+        }
+            
+        // Function to go to the previous page
+        function goToPreviousPagef2() {
+            if (currentPageIndex > 1) {
+                loadPage(currentPageIndex - 1);
+            } else {
+                // If on the first page, go to the last page (circular navigation)
+                loadPage(pages.length);
+            }
+        }
+        
+        
+    
+        // Function to go to the next page
+        function goToNextPagef2() {
+            if (currentPageIndex < pages.length) {
+                loadPage(currentPageIndex + 1);
+            } else {
+                // If on the last page, go to the first page (circular navigation)
+                loadPage(1);
+            }
+        }
+        
+
+
+        
+    
+        
+        loadPage(currentPageIndex);
+   </script>
+</body>
+</html>
+

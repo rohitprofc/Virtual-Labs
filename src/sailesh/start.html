@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Structure of a Human Body</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="myscripts.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+/* Reset and General styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+background: url("all.jpg");
+background-size: cover;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, p {
+    margin-bottom: 20px;
+}
+
+/* Keyframe for Blinking Effect */
+@keyframes blinking {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Applying Blinking Effect to specified headings */
+h1, .heading {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5em; /* increased font size */
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* subtle text shadow for depth */
+    margin-top: 30px;
+    animation: blinking 1.5s infinite;
+}
+
+/* Styling for "Main Structures" and "Senses" */
+h2.boxed-section {
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.7); /* slightly transparent white */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+}
+
+p.associated-text {
+    padding: 0 20px;
+    background-color: rgba(245, 245, 245, 0.9); /* slightly transparent light gray */
+    border-radius: 6px;
+    margin: 10px 0 20px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Main content styling */
+p {
+    font-size: 1.2em;
+    color: #4a4a4a;
+}
+
+h2 {
+    font-size: 2em;
+    border-bottom: 2px solid brown;
+    padding-bottom: 10px;
+    animation: slideInLeft 0.5s forwards;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Image styles */
+.main {
+    display: block;
+    width: 90%;
+    margin: 30px auto;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+}
+
+/* Button styles with hover effect */
+.btn-primary {
+    background-color: brown;
+    border-color: brown;
+    margin-top: 20px;
+    transform: scale(1);
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal styles */
+.modal-content {
+    background-color: #f9f9f9;
+    border-radius: 15px;
+}
+
+.modal-body img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Quiz link */
+.p1 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+.btn1 {
+    background-color: brown;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    margin: 20px 0;
+    transform: scale(1);
+}
+
+.btn1:hover {
+    background-color: #8a5c2d;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Next link styling */
+.next {
+    margin-top: 40px;
+    font-size: 1.3em;
+}
+
+.link1 {
+    font-size: 1.5em;
+    color: brown;
+    text-decoration: none;
+    border-bottom: 2px solid brown;
+}
+
+.link1:hover {
+    color: #8a5c2d;
+}
+.selection-images {
+      float: left;
+      margin-right: 20px;
+      margin-bottom: 50px;
+    }
+
+    .selection-images img {
+      display: block;
+      cursor: pointer;
+      margin: 0; /* Remove margin */
+    }
+
+    .displayed-image {
+      display: none; /* Hide initially */
+      float: left;
+      margin-left: 20px; /* Adjust spacing between image and display area */
+    }
+
+    .displayed-image img {
+      display: block;
+      max-width: 150%;
+      max-height: 200%;
+    }
+      img{
+        display:block;
+      }
+
+/* Iframe styling */
+iframe {
+    display: block;
+    margin: 30px auto;
+    border: 5px solid brown;
+    border-radius: 10px;
+}
+
+/* Score container styling */
+#scoreContainer {
+    margin-top: 40px;
+    text-align: center;
+    background-color: #fff9e6;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#score {
+    font-size: 2em;
+    font-weight: bold;
+}
+</style>
+<script>
+ function displayImage(imageSrc) {
+      const displayedImg = document.getElementById('displayedImg');
+      displayedImg.src = imageSrc;
+      document.getElementById('displayedImage').style.display = 'block'; // Display the image container
+    }
+</script>
+</head>
+<body>
+    <h1 align="center" style="color: brown;">Human Body</h1>
+    <p>
+        The human body is a complex biological system involving cells, tissues, organs, and systems all working together to make up a human being.
+    </p>
+<h2 class="boxed-section" style="font-family: 'Courier New', Courier, monospace; font-weight: 600;">Main Structures</h2>    <p>
+        From the outside, the human body can be divided into several main structures. The head houses the brain which controls the body. The neck and trunk house many of the important systems that keep the body alive and healthy. The limbs (arms and legs) help the body to move about and function in the world.
+    </p>
+<h2 class="boxed-section" style="font-family: 'Courier New', Courier, monospace; font-weight: 600;">Senses</h2>    <p>
+        The human body has five main senses that it uses to convey information about the outside world to the brain. These senses include sight (eyes), hearing (ears) Hearing and the Ear, smell (nose), taste (tongue), and touch (skin).
+    </p>
+    <h1 align="center" class="heading">Basic Parts of the Human Body</h1>
+        <img src="third.jpg" alt="Human Body" id="mainImage" class="main">
+    <div class="text-center">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Picture
+      </button>
+    </div>
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="third.jpg" class="rounded" alt="Human Body" height="150" width="200">
+            </div>
+          </div>
+        </div>
+      </div>
+ <div class="selection-images">
+        <img src="v1.png" alt="Click for eyes Images" onclick="displayImage('v1.png')">
+        <img src="v2.png" alt="Click for Head Images" onclick="displayImage('v2.png')">
+        <img src="v3.png" alt="Click for nose Images" onclick="displayImage('v3.png')">
+        <img src="v4.png" data-target="#mouthImages"  alt="Click for mouth Images" onclick="displayImage('v4.png')">
+            <img src="v5.png" data-target="#handsImages"  alt="Click for  Images" onclick="displayImage('v5.png')">
+            <img src="v6.png" data-target="#stomachImages"  alt="Click for  Images" onclick="displayImage('v6.png')">
+            <img src="v7.png" data-target="#legsImages"  alt="Click for Images" onclick="displayImage('v7.png')">
+       
+      </div>
+    
+      <div class="displayed-image" id="displayedImage">
+        <img id="displayedImg" src="" alt="Displayed Image">
+      
+        </div>
+    <p>Check the video to understand clearly</p>
+    <iframe width="75%" height="600" src="https://www.youtube.com/embed/SUt8q0EKbms" allow="fullscreen"></iframe>
+    <div class="p1">Take a Quiz to check your Understanding</div>
+    <div class="text-left">
+        <button class="btn1" onclick="document.location='quiz.html'">Quiz</button>
+    </div>    
+    <div id="scoreContainer" style="display: none;">
+        <h2>Your Score</h2>
+        <p id="score"></p>
+    </div>
+    
+    <p class="next">Do you want to learn internal structure then visit the below link</p>
+    <a class="link1" href="internal.html">Internal Structure</a>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

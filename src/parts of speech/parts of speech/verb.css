@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 520px ;/* Adjust as needed */
+}
+.left {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    padding: 20px;
+    background-color: #9D76C1;
+    padding-top: 90px;
+}
+.dbut{
+    height:80px;
+    padding:0px;
+    font-size: large;
+    margin-bottom: 30px;
+    border-radius: 20px;
+
+}
+.right {
+    width: 85%;
+    padding: 10px;
+    background-color:whitesmoke;
+}
+.text-hidden {
+    display: none;
+    color: black;
+    
+  }
+  

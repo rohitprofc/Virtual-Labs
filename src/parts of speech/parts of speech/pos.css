@@ -1,0 +1,81 @@
+/* Reset some default styles for better consistency */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Set a fixed height for the container */
+.down {
+    /*display: flex;
+    flex-direction: row;*/
+    width: 1535px; 
+    height: 540px;/* Adjust as needed */
+}
+
+/* Style the left column */
+/*.left {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    padding: 20px;
+    background-color: #A076F9;
+    padding-top: 90px;
+}
+.dbut{
+    height:80px;
+    padding:10px;
+    font-size: large;
+    margin-bottom: 30px;
+    border-radius: 20px;
+
+}*/
+
+/* Style the right column 
+.right {
+    width: 85%;
+    padding: 20px;
+    background-color: aqua;
+}*/
+
+/* Apply styles to the header */
+header {
+    background-color:#E5CFF7;
+    color: black;
+    text-align: center;
+    padding: 20px;
+    font-size: 40px;
+}
+
+/* Style the navigation menu */
+nav {
+    background-color: #9D76C1;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    height: 60px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+/* Style links in the navigation menu */
+.link {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s, border-bottom-color 0.8s, font-size 0.3s;
+    border-bottom: 1px solid transparent;
+}
+
+.link:hover {
+    color:#E5CFF7;
+    border-bottom-color: #E5CFF7;
+    font-size: 120%;
+}

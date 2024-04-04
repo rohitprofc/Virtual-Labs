@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="challenge1.css">
+</head>
+<body>
+    <div class="quiz">
+        <!-- Question 1 -->
+        <div class="question" id="question1">
+            <h2>1. How to write 60 is not greater than 70?
+            </h2>
+            <div class="options">
+                <label><input type="radio" name="q1" value="60 > 70"> 60 > 70</label><br>
+                <label><input type="radio" name="q1" value="70 < 60"> 70 < 60</label><br>
+                <label><input type="radio" name="q1" value="60 = 70"> 60 = 70</label><br>
+                <label><input type="radio" name="q1" value="60 < 70"> 60 < 70</label><br>
+            </div>
+            <div class="solution" style="display: none;">
+                <h3>Solution:</h3>
+                <p>60 is not greater than 70 is mathematically represented as 60 < 70.
+
+                </p>
+                
+            </div>
+            <div class="buttons">
+                <button class="check-answer">Check Answer</button>
+                <button class="view-solution">View Solution</button>
+                <button class="next-question">Next Question</button>
+            </div>
+        </div>
+        <hr>
+
+        <!-- Question 2 -->
+        <div class="question" id="question2">
+            <h2>2. What are the other terms used to describe less than?</h2>
+            <div class="options">
+                <label><input type="radio" name="q2" value="Smaller than"> Smaller than</label><br>
+                <label><input type="radio" name="q2" value="Lower than"> Lower than</label><br>
+                <label><input type="radio" name="q2" value="Fewer than"> Fewer than</label><br>
+                <label><input type="radio" name="q2" value="All of the above"> All of the above</label><br>
+            </div>
+            <div class="solution" style="display: none;">
+                <h3>Solution:</h3>
+                <p>The other terms used to describe less than is smaller than, lower than, below, fewer than, not greater than, and so on.
+
+                </p>
+                
+            </div>
+            <div class="buttons">
+                <button class="check-answer">Check Answer</button>
+                <button class="view-solution">View Solution</button>
+                <button class="next-question">Next Question</button>
+            </div>
+        </div>
+        <hr>
+
+        <!-- Question 3 -->
+        <div class="question" id="question3">
+            <h2>3.  Fill in the blanks with the suitable sign: 90 - 10 ____ 100</h2>
+            <div class="options">
+                <label><input type="radio" name="q3" value=">"> ></label><br>
+                <label><input type="radio" name="q3" value="<"> < </label><br>
+                <label><input type="radio" name="q3" value="<="> <= </label><br>
+                <label><input type="radio" name="q3" value=">="> >= </label><br>
+            </div>
+            <div class="solution" style="display: none;">
+                <h3>Solution:</h3>
+                <p>here, 90 - 10 => 80, therefore 80 < 100</p>               
+            </div>
+            <div class="buttons">
+                <button class="check-answer">Check Answer</button>
+                <button class="view-solution">View Solution</button>
+                <button class="next-question">Next Question</button>
+            </div>
+        </div>
+        <hr>
+
+        <!-- Question 4 -->
+        <div class="question" id="question4">
+            <h2>4. Nirmal got 40 marks in her Maths exam whereas her friend Ritu got 24 marks in the same exam. Who scored fewer marks?</h2>
+            <div class="options">
+                <label><input type="radio" name="q4" value="Ritu got fewer marks"> Ritu got fewer marks</label><br>
+                <label><input type="radio" name="q4" value="Nirmala got fewer marks"> Nirmala got fewer marks</label><br>
+                <label><input type="radio" name="q4" value="both got same marks"> both got same marks</label><br>
+                <label><input type="radio" name="q4" value="None of the above"> None of the above</label><br>
+            </div>
+            <div class="solution" style="display: none;">
+                <h3>Solution:</h3>
+                <p>Marks obtained by Nirmal = 40</p>
+                <p>Marks obtained by Ritu = 24</p>
+                <p>Since, 24 is less than 40, 24<40</p>
+                <p>Therefore, Ritu scored less than Nirmal.</p>
+            </div>
+            <div class="buttons">
+                <button class="check-answer">Check Answer</button>
+                <button class="view-solution">View Solution</button>
+                <button class="next-question">Next Question</button>
+            </div>
+        </div>
+        <hr>
+
+        <!-- Question 5 -->
+        <div class="question" id="question5">
+            <h2>5. How much less is 28 km than 42.6 km?</h2>
+            <div class="options">
+                <label><input type="radio" name="q5" value="15"> 15</label><br>
+                <label><input type="radio" name="q5" value="22"> 22</label><br>
+                <label><input type="radio" name="q5" value="14.6"> 14.6</label><br>
+                <label><input type="radio" name="q5" value="14"> 14</label><br>
+            </div>
+            <div class="solution" style="display: none;">
+                <h3>Solution:</h3>
+                <p>=> 42.6 km - 28 km</p>
+                <p>=> 14.6 km</p>
+                <p>Therefore, 28 km is smaller than 42.6 km by 14.6 km.</p>
+                
+            </div>
+            <div class="buttons">
+                <button class="check-answer">Check Answer</button>
+                <button class="view-solution">View Solution</button>
+                <a href="sub.html"><button class="next-question">Done</button></a>
+            </div>
+        </div>
+        <hr>
+    </div>
+
+    <script>
+        // Current question index
+        let currentQuestion = 1;
+
+        // Correct answers for each question
+        const correctAnswers = [
+            "60 < 70", // Question 1
+            "All of the above", // Question 2
+            "<", // Question 3
+            "Ritu got fewer marks", // Question 4
+            "14.6" // Question 5
+        ];
+
+        // Event listeners for Check Answer buttons
+        const checkAnswerButtons = document.querySelectorAll('.check-answer');
+        for (let i = 0; i < checkAnswerButtons.length; i++) {
+            checkAnswerButtons[i].addEventListener('click', () => {
+                const selectedAnswer = document.querySelector(`input[name="q${currentQuestion}"]:checked`);
+
+                if (selectedAnswer) {
+                    const userAnswer = selectedAnswer.value;
+
+                    if (userAnswer === correctAnswers[currentQuestion - 1]) {
+                        alert("Correct!");
+                    } else {
+                        alert("Incorrect. Try again.");
+                    }
+                } else {
+                    alert("Please select an answer.");
+                }
+            });
+        }
+
+        // Event listeners for View Solution buttons
+        const viewSolutionButtons = document.querySelectorAll('.view-solution');
+        for (let i = 0; i < viewSolutionButtons.length; i++) {
+            viewSolutionButtons[i].addEventListener('click', () => {
+                const solutionDiv = document.querySelector(`#question${currentQuestion} .solution`);
+                solutionDiv.style.display = 'block';
+            });
+        }
+
+        // Event listener for Next Question button
+        const nextQuestionButtons = document.querySelectorAll('.next-question');
+        for (let i = 0; i < nextQuestionButtons.length; i++) {
+            nextQuestionButtons[i].addEventListener('click', () => {
+                const currentQuestionDiv = document.querySelector(`#question${currentQuestion}`);
+                currentQuestionDiv.style.display = 'none';
+
+                // Move to the next question
+                currentQuestion++;
+                if (currentQuestion > 5) {
+                    currentQuestion = 1;
+                }
+
+                const nextQuestionDiv = document.querySelector(`#question${currentQuestion}`);
+                nextQuestionDiv.style.display = 'block';
+            });
+        }
+    </script>
+</body>
+</html>

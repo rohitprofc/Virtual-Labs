@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>verb</title>
+    <link rel="stylesheet" href="verb.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <button class="dbut" onclick="loadPage('nounlearn.html')" onmouseover="showText(this)" onmouseout="hideText(this)">
+                <img src="learning.jpg" width="80px;">
+                <span class="text-hidden">Learning</span>
+            </button>
+            <button class="dbut" onclick="loadPage('nounex.html')"  onmouseover="showText(this)" onmouseout="hideText(this)">
+                <img src="example.jpeg" width="100px;">
+                <span class="text-hidden">Example</span>
+            </button><br>
+            <button class="dbut" onclick="loadPage('nounpra.html')" onmouseover="showText(this)" onmouseout="hideText(this)">
+                <img src="pracctice.jpeg" width="100px;">
+                <span class="text-hidden">Practice</span>
+            </button>
+        </div>
+        <iframe class="right" name="right" src="nounlearn.html">
+            
+        </iframe>
+    </div>
+    
+    <script>
+        // Function to load different pages into the iframe
+        function loadPage(pageName) {
+            var iframe = document.getElementsByName("right")[0];
+            iframe.src = pageName;
+        }
+        function showText(button) {
+  const img = button.querySelector('img');
+  const text = button.querySelector('.text-hidden');
+  img.style.display = 'none';
+  text.style.display = 'inline';
+}
+
+function hideText(button) {
+  const img = button.querySelector('img');
+  const text = button.querySelector('.text-hidden');
+  img.style.display = 'inline';
+  text.style.display = 'none';
+}
+    </script>
+    
+</body>
+</html>
+
+

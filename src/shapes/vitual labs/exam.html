@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Square Definition</title>
+    <style>
+        /* CSS to style the square */
+        .square {
+            width: 200px;
+            height: 200px;
+            background-color: #3498db; /* Blue color for the square */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: white;
+            margin: 0 auto;
+        }
+
+        /* CSS for the definition text */
+        .definition {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 16px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="square">
+        Square
+    </div>
+    <div class="definition">
+        <p>A square is a four-sided polygon with equal sides and equal angles.</p>
+        <p>In geometry, a square is a two-dimensional shape with all sides of equal length.</p>
+    </div>
+</body>
+</html>
+<div class="containertask">
+    <h1>FIND HOW MANY?</h1>
+    <label for="numberInput5">Number of circles:</label>
+    <input type="number" id="numberInput5" class="in5">
+    <button id="checkButton5">Check</button><br><br>
+
+    <label for="numberInput6">Number of squares</label>
+    <input type="number" id="numberInput6" class="in6">
+    <button id="checkButton6">Check</button><br><br>
+
+    <label for="numberInput7"> Number of triangles:</label>
+    <input type="number" id="numberInput7" class="in7">
+    <button id="checkButton7">Check</button><br><br>
+
+    <label for="numberInput8"> Number of rectangles:</label>
+    <input type="number" id="numberInput8" class="in8">
+    <button id="checkButton8">Check</button><br><br>
+    
+
+    <button id="resetButton">Reset</button>
+</div>
+<br><br><br><br> <br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br> <br><br><br><br>
+    <h1> TASK-2:</h1>
+    <div class="task1">
+        <img src="https://files.alldayprimary.com/modules/geometry-inspired-activities/color-by-shapes-1a-pdf-preview.jpg">
+    </div>
+    // ... (existing code)
+
+    submitButton.addEventListener("click", function() {
+        const messageBox = document.getElementById("messageBox");
+        const messageImage = document.getElementById("messageImage");
+
+        if (areAllInputsCorrect()) {
+            messageImage.src = "https://m.media-amazon.com/images/I/51sqOF2L+iL._AC_UF1000,1000_QL80_.jpg"; // Replace with the path to your success image
+            messageBox.classList.add("success");
+
+            // Activate the "LEVEL 2" button
+            level2Button.disabled = false;
+        } else {
+            messageImage.src = "https://icon-library.com/images/try-again-icon/try-again-icon-3.jpg"; // Replace with the path to your failure image
+            messageBox.classList.add("failure");
+
+            // Deactivate the "LEVEL 2" button
+            level2Button.disabled = true;
+        }
+
+        messageBox.style.display = "block";
+
+        setTimeout(function() {
+            messageBox.style.display = "none";
+            messageBox.classList.remove("success", "failure");
+            messageImage.src = ""; // Clear the image source
+        }, 2000);
+    });

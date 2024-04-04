@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    header{
+        text-align: center;
+    }
+    main{
+        text-align: center;
+        font-size: large;
+    }
+    p{
+        font-size:2.5vw;
+    }
+    .red {
+            color: red;
+            cursor: pointer;
+        }
+
+    .green {
+            color: green;
+    }
+
+    .center {
+            display: flex;
+            justify-content: center;
+            font-size:large;
+            margin-top:20px;
+    }
+    .btn{
+        height:50px;
+        width: 90px;
+        border-radius: 15px;
+        background-color: #E5CFF7;
+    }
+    .bt{
+        height:25px;
+        width: 60px;
+        border-radius: 5px;
+        color:white;
+        background-color: #9D76C1;
+
+    }
+    #checkAnswerButton{
+        height:25px;
+        width: 130px;
+        border-radius: 5px;
+        color:white;
+        background-color: #9D76C1;
+    }
+    #messageBox {
+    display: none;
+    position: absolute;
+    top: 15vh;
+    left: 20vw;
+    height: 50vh;
+    width: 50vw;
+    /*background-color: rgba(202, 198, 198, 0.7); /* Adjust the last parameter for the message box opacity */
+    align-items: center;
+    padding-top: 50px;
+    /*border: 3px solid black;*/
+    border-radius: 20px;
+    backdrop-filter: blur(10px); /* Adjust the blur value as needed */
+}
+
+    #messageText{
+        
+        font-size:larger;
+        font-weight: bold;
+    }
+    #messageText1{
+        color:red;
+        font-size:larger;
+        font-weight: bold;
+    }
+    #messageText2{
+        color:green;
+        font-size:larger;
+        font-weight: bold;
+    }
+    #gif{
+        display: none;
+        position: absolute;
+        top:2vh;
+        left:5vw;
+        height: 90vh;
+        width: 90vw;
+    }
+</style>
+<body>
+    <img id="gif" src="celebration.gif" >
+    <header>
+        <h1> click on the noun words in the sentence</h1>
+    
+    </header>
+    <main>
+        <p>
+            <span class="word" onmouseenter="changeColorToRed(this)" onmouseleave="changeColorToBlack(this)" onclick="toggleColor(this)">he</span>
+            <span class="word" onmouseenter="changeColorToRed(this)" onmouseleave="changeColorToBlack(this)" onclick="toggleColor(this)">is</span>
+            <span class="word" onmouseenter="changeColorToRed(this)" onmouseleave="changeColorToBlack(this)" onclick="toggleColor(this)">playing</span>
+            <span class="word" onmouseenter="changeColorToRed(this)" onmouseleave="changeColorToBlack(this)" onclick="toggleColor(this)">outside</span>.
+        </p>
+    </main>
+<br>
+<div class="center">
+    <button class="btn" style="margin-right: 20px; margin-left: 10px;" type="reset" onclick="resetColors()">Try Again</button>
+    <button class="btn" type="submit" onclick="checkAnswer()">Submit</button>
+</div>
+
+<div id="messageBox" class="center" >
+    <div class="center">
+        <img id="messageImage1" src="corret.png" alt="happy face emoji" width="50px" style="display: none;"><br>
+        <img id="messageImage2" src="wrong.png" alt="sad face emoji" width="50px" style="display: none;"><br>
+    </div>
+    <div id="messageText"  style="text-align: center;"></div>
+    <div id="messageText1"  style="text-align: center;"></div>
+
+    <div id="messageText2" style="text-align: center;"></div>
+    <div class="center">
+    <button class="bt" style="margin-right: 10px;" id="okButton" onclick="closeMessageBox()">OK</button>
+    <button  id="checkAnswerButton" onclick="showAnswer()">Check Answer</button>
+    </div>
+</div>
+
+<script>
+const nounsList = ["he"]; // Add your list of nouns here
+
+    function changeColorToRed(element) {
+        element.classList.add('red');
+    }
+
+    function toggleColor(element) {
+        if (element.classList.contains('green')) {
+            element.classList.remove('green');
+            element.style.color = '';
+        } else {
+            element.classList.add('green');
+            element.style.color = 'green';
+        }
+    }
+
+    function changeColorToBlack(element) {
+        element.classList.remove('red');
+    }
+
+    function resetColors() {
+        const words = document.querySelectorAll('.word');
+        words.forEach(word => {
+            word.classList.remove('green');
+            word.style.color = '';
+        });
+    }
+
+    function checkAnswer() {
+    const selectedWords = Array.from(document.querySelectorAll('.green')).map(word => word.textContent);
+    const messageBox = document.getElementById('messageBox');
+    const messageText = document.getElementById('messageText');
+    const messageText1 = document.getElementById('messageText1');
+    const messageText2 = document.getElementById('messageText2');
+    const messageImage1 = document.getElementById('messageImage1');
+    const messageImage2 = document.getElementById('messageImage2');
+    const okButton = document.getElementById('okButton');
+    const checkAnswerButton = document.getElementById('checkAnswerButton');
+    const gifImg = document.getElementById("gif");
+
+    if (selectedWords.length === 0) {
+        // No word is selected
+        messageImage1.style.display = 'none';
+        messageImage2.style.display = 'none';
+        messageText1.style.display = 'none';
+        messageText2.style.display = 'none';
+        messageText.style.display = 'block';
+
+        messageText.textContent = "Please select a word in the sentence.";
+        //okButton.style.display = 'block';
+        checkAnswerButton.style.display = 'none';
+       // gifImg.style.display = 'none';
+    } else {
+        // Check if any selected word is NOT in nounsList
+        const areAllWordsSelected = nounsList.every(word => selectedWords.includes(word.toLowerCase()));
+       
+
+        if (areAllWordsSelected && selectedWords.length ==nounsList.length) {
+            messageImage1.style.display = 'block';
+            messageImage2.style.display = 'none';
+
+            messageText.style.display ="none";
+            messageText1.style.display = 'none';
+            messageText2.style.display = 'block';
+            messageText2.textContent = "Well done! Your answer is correct.";
+            checkAnswerButton.style.display = 'none';
+            gifImg.style.display = "block";
+        
+        } else {
+            messageImage1.style.display = 'none';
+            messageImage2.style.display = 'block';
+            messageText.style.display = 'none';
+            messageText2.style.display = 'none';
+            messageText1.style.display = 'block';
+
+            messageText1.textContent = "Sorry, your answer is wrong.";
+            
+
+            checkAnswerButton.style.display = 'block';
+        }
+            
+    }
+
+    messageBox.style.display = 'block';
+    // The rest of your code for checking the answer when words are selected
+    // ...
+}
+
+
+
+
+
+
+
+
+    function closeMessageBox() {
+        const messageBox = document.getElementById('messageBox');
+        messageBox.style.display = 'none';
+    }
+
+    function showAnswer() {
+        const selectedWords = Array.from(document.querySelectorAll('.green')).map(word => word.textContent);
+
+        const messageBox = document.getElementById('messageBox');
+        const messageText = document.getElementById('messageText');
+        const okButton = document.getElementById('okButton');
+        const checkAnswerButton = document.getElementById('checkAnswerButton');
+       
+        messageText.textContent = `Your answer: ${selectedWords.join(', ')}. || Correct answer: ${nounsList.join(', ')}`;
+       messageImage2.style.display = 'none';
+       messageText.style.display='block'; 
+       messageText1.style.display='none'; 
+       messageText2.style.display='none'; 
+
+       okButton.style.display = 'block';
+        checkAnswerButton.style.display = 'none';
+    }
+</script>
+</body>
+</html>
+

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exam</title>
+  <style>
+    form {
+      font-size: 20px;
+	  
+	.hi {
+      font-size: 20px;
+	  }
+
+  </style>
+</head>
+<body>
+  <div id="quiz-container">
+    <h1 align="center">Check your capability!</h1>
+    <form id="quiz-form" align="center">
+      <!-- Question 1 -->
+      <div class="question">
+        <p>1. Find the area of a triangle whose sides are 12 cm, 6 cm, and 15 cm.</p>
+        <input type="radio" name="q1" value="incorrect"> 18.75 cm2<br>
+        <input type="radio" name="q1" value="incorrect"> 39.80 cm2<br>
+        <input type="radio" name="q1" value="correct"> 34.20 cm2<br>
+        <input type="radio" name="q1" value="incorrect"> 45.00 cm2<br>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="question">
+        <p>2. Find the Area of a Triangle whose two sides are 18 cm and 10 cm, respectively, and the perimeter is 42 cm.</p>
+        <input type="radio" name="q2" value="incorrect"> 72.9 cm2<br>
+        <input type="radio" name="q2" value="correct">  69.7 cm2<br>
+        <input type="radio" name="q2" value="incorrect"> 100 cm2<br>
+        <input type="radio" name="q2" value="incorrect"> 120 cm2<br>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="question">
+        <p>3. A triangular park has sides 120 m, 80 m, and 50 m. A gardener has to put a fence all around it and also plant grass inside. How much area does he need to plant?</p>
+        <input type="radio" name="q3" value="incorrect">475√15 m2<br>
+        <input type="radio" name="q3" value="incorrect"> 385√15 m2<br>
+        <input type="radio" name="q3" value="correct"> 375√15 m2<br>
+        <input type="radio" name="q3" value="incorrect"> 385√15 m2<br>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="question">
+        <p>4. The sides of a triangle are in the ratio of 12: 17: 25, and its perimeter is 540 cm. Find its area.</p>
+        <input type="radio" name="q4" value="correct"> 9000 cm2<br>
+        <input type="radio" name="q4" value="incorrect">9900 cm2<br>
+        <input type="radio" name="q4" value="incorrect">7000 cm2<br>
+        <input type="radio" name="q4" value="incorrect">7700 cm2<br>
+      </div>
+
+      <!-- Question 5 -->
+      <div class="question">
+        <p>5. Find the area of a triangle whose sides are 4.5 cm and 10 cm and perimeter 20.5 cm.</p>
+        <input type="radio" name="q5" value="incorrect">7.99 cm2<br>
+        <input type="radio" name="q5" value="correct"> 7.91 cm2<br>
+        <input type="radio" name="q5" value="incorrect">8.91 cm2<br>
+        <input type="radio" name="q5" value="incorrect">9.91 cm2<br>
+      </div>
+		<br>
+      <button type="button" id="next-button">Next</button>
+    <button type="button" id="submit-button">Submit</button>
+    </form>
+    <p id="score" align="center">Score: 0</p>
+  </div>
+
+  <script>
+    const questions = document.querySelectorAll('.question');
+    const nextButton = document.getElementById('next-button');
+    const submitButton = document.getElementById('submit-button');
+    const scoreDisplay = document.getElementById('score');
+    const quizForm = document.getElementById('quiz-form');
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    // Hide all questions except the first one
+    questions.forEach((question, index) => {
+      if (index !== 0) {
+        question.style.display = 'none';
+      }
+    });
+
+    nextButton.addEventListener('click', () => {
+      if (currentQuestion < questions.length - 1) {
+        questions[currentQuestion].style.display = 'none';
+        currentQuestion++;
+        questions[currentQuestion].style.display = 'block';
+      }
+    });
+
+    submitButton.addEventListener('click', () => {
+      // Calculate the score
+      score = 0;
+      for (let i = 1; i <= questions.length; i++) {
+        const selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+        if (selectedOption && selectedOption.value === 'correct') {
+          score++;
+        }
+      }
+
+      // Display the score
+      scoreDisplay.textContent = `Score: ${score} out of ${questions.length}`;
+	 if (score==0){
+	alert("You got 0 points.Practice more!");
+	}
+	else if (score==1){
+	alert("You got 1 point.Improve next time!");
+	}
+	else if(score==2)
+	{
+	alert("You got 2 points.Satisfied!");
+	}
+	else if(score==3)
+	{
+	alert("You got 3 points.Good");
+	}
+	else if(score==4)
+	{
+	alert("You got 4 points.Excellent!");
+	}
+	else{
+	alert("Congrats.......You got 5 points.Outstanding performance!");
+	}
+    });
+  </script>
+</body>
+</html>

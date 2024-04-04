@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <link rel="stylesheet" href="styles.css">
+   
+</head>
+<div class="vl"></div>
+
+<body>
+<div id="change2">
+    <div id ="pavan" class="logo">
+        <img src="https://images.shiksha.com/mediadata/images/1650520191phpTC7t7e.jpeg"> <hr>
+    </div>
+    
+    <div id ="bhanu" class="cont">
+        <a href="aim.html" class="button">AIM</a>
+        <br><br>
+        <a href="expanation.html" class="button">EXPLANATION</a>
+        <br><br>
+        <a href="work.html" class="button">TASKS</a>
+        <br> <br>
+    </div>
+<div class="container2" >
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">2D SHAPES</button>
+        <div id="myDropdown" class="dropdown-content">
+          <div class="container">
+            <img src="https://illustoon.com/photo/thum/7443.png" alt="Click to Open Content"  class="circle">
+            <div class="overlay">
+              <div class="text" onclick="toggleContent()" style="cursor: pointer;">CIRCLE</div>
+              </div>
+            </div>
+            <div class="square">
+              <img src="https://clipart-library.com/2023/7a9634f6a5a5c400b39a72ec3994b6dc.jpg" alt="Click to Open Content"  class="squ">
+              <div class="overlay2">
+                <div class="text2" onclick="toggleContent2()" style="cursor: pointer;">SQUARE</div>
+                </div>
+              </div>
+              
+              <div class="rectangle">
+                <img src="https://clipart-library.com/2023/7182.png" alt="Clic to Open Content"  class="rec">
+                <div class="overlay3">
+                  <div class="text3" onclick="toggleContent3()" style="cursor: pointer;">RECTANGLE</div>
+                  </div>
+                </div>
+                <div class="triangle">
+                  <img src="https://illustoon.com/photo/thum/7451.png" alt="Clck to Open Content"  class="tri">
+                  <div class="overlay4">
+                    <div class="text4" onclick="toggleContent4()" style="cursor: pointer;">TRIANGLE</div>
+                    </div>
+                  </div>
+          </div>
+          </div>
+
+      <div class="dropdown2">
+        <button onclick="jkFunction()" class="dropbtn2">3D SHAPES</button>
+        <div id="myDropdown2" class="dropdown-content2">
+
+          
+        </div>
+      </div>
+</div>
+    <!-- Content that will open when you click the image -->
+    <div id="content" class="content" >
+      <div class="circle2" >
+        Circle
+      </div>
+    <div class="definition">
+        <p>A circle is a round-shaped figure that has no corners or edges.</p>
+        <p>In geometry, a circle can be defined as a closed shape, two-dimensional shape, curved shape.</p>
+    </div>
+    
+    <div>
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230427100511/Circumference-of-Circle-3.jpg">
+     </div>
+  </div>
+  <div id="content2" class="content" >
+    <div class="square1">
+      Square
+  </div>
+  <div class="definition1">
+      <p>A square is a four-sided polygon with equal sides and equal angles.</p>
+      <p>In geometry, a square is a two-dimensional shape with all sides of equal length.</p>
+  </div>
+      <img src="https://i.ytimg.com/vi/CUzYFil_PA8/maxresdefault.jpg">
+   </div>
+</div>
+<div id="content3" class="content" >
+  <div class="rectangle1">
+    Rectangle
+</div>
+<div class="definition">
+    <p>A rectangle is a four-sided polygon with opposite sides of equal length and all angles of 90 degrees.</p>
+    <p>In geometry, a rectangle is a two-dimensional shape with two pairs of parallel sides.</p>
+</div>
+    <img src="https://i.ytimg.com/vi/n-ULwalqbnI/maxresdefault.jpg">
+ </div>
+</div>
+<div id="content4" class="content" >
+  <div class="triangle1">
+</div>
+<div class="definition">
+    <p>A triangle is a three-sided polygon with three angles.</p>
+    <p>In geometry, triangles can have various types, such as equilateral, isosceles, and scalene.</p>
+</div>
+    <img src="https://codinghero.ai/wp-content/uploads/2022/12/Triangles_01.png">
+ </div>
+</div>
+     </body>
+    <script>
+        /* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns1 = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns1.length; i++) {
+        var openDropdown1 = dropdowns1[i];
+        if (openDropdown1.classList.contains('show')) {
+          openDropdown1.classList.remove('show');
+        }
+      }
+    }
+  }
+  function jkFunction() {
+    document.getElementById("myDropdown2").classList.toggle("show2");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn2')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content2");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show2')) {
+          openDropdown.classList.remove('show2');
+        }
+      }
+    }
+  }
+  function toggleContent() {
+    var contentDiv = document.getElementById("content");
+    var content4 = document.getElementById("content4");
+    var content2 = document.getElementById("content2");
+    var content3 = document.getElementById("content3");
+
+    // Close all content elements
+    content4.style.display = "none";
+    content2.style.display = "none";
+    content3.style.display = "none";
+            if (contentDiv.style.display === "none") {
+                contentDiv.style.display = "block";
+            } else {
+                contentDiv.style.display = "none";
+            }
+        }
+  function toggleContent2() {
+    var contentDiv = document.getElementById("content2");
+    var content1 = document.getElementById("content");
+    var content4 = document.getElementById("content4");
+    var content3 = document.getElementById("content3");
+
+    // Close all content elements
+    content1.style.display = "none";
+    content4.style.display = "none";
+    content3.style.display = "none";
+      if (contentDiv.style.display === "none") {
+          contentDiv.style.display = "block";
+      } else {
+          contentDiv.style.display = "none";
+      }
+  }
+  function toggleContent3() {
+    var contentDiv = document.getElementById("content3");
+    var content1 = document.getElementById("content");
+    var content2 = document.getElementById("content2");
+    var content4 = document.getElementById("content4");
+
+    // Close all content elements
+    content1.style.display = "none";
+    content2.style.display = "none";
+    content4.style.display = "none";
+      if (contentDiv.style.display === "none") {
+          contentDiv.style.display = "block";
+      } else {
+          contentDiv.style.display = "none";
+      }
+  }
+  function toggleContent4() {
+    var contentDiv = document.getElementById("content4");
+    var content1 = document.getElementById("content");
+    var content2 = document.getElementById("content2");
+    var content3 = document.getElementById("content3");
+
+    // Close all content elements
+    content1.style.display = "none";
+    content2.style.display = "none";
+    content3.style.display = "none";
+      if (contentDiv.style.display === "none") {
+          contentDiv.style.display = "block";
+      } else {
+          contentDiv.style.display = "none";
+      }
+    }
+    </script>
+</div>
+</html>

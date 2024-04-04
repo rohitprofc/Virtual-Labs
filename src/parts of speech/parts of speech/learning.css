@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+header{
+    text-align: center;
+    text-decoration-line: underline;
+}
+.right {
+    display: flex;
+    flex-direction: row;
+    height: 55vh; /* Adjust as needed */
+}
+.rl {
+    width: 70%;
+    padding: 20px;
+    background-color:white;
+    font-size: 20px;
+}
+.rr {
+    width: 30%;
+    padding: 20px;
+    background-color:white;
+}

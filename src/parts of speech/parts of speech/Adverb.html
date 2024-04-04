@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>verb</title>
+    <link rel="stylesheet" href="verb.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <button class="dbut" onclick="loadPage('adverblearn.html')">Learn</button><br>
+            <button class="dbut" onclick="loadPage('adverbex.html')">Examples</button><br>
+            <button class="dbut" onclick="loadPage('adverbpra.html')">Practice</button>
+        </div>
+        <iframe class="right" name="right" src="adverblearn.html">
+            
+        </iframe>
+    </div>
+    
+    <script>
+        // Function to load different pages into the iframe
+        function loadPage(pageName) {
+            var iframe = document.getElementsByName("right")[0];
+            iframe.src = pageName;
+        }
+    </script>
+    
+</body>
+</html>
+
+

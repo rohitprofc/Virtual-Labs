@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculation</title>
+    <style>
+        .output {
+            margin-top: 20px;
+        }
+		p.hi{
+	font-family:georgia;
+	font-size:18px;
+	text-align:"center";
+	}
+	.hi1{
+	text-decoration: underline;
+	font-size:30px;
+	}
+	.hi2{
+	font-size: 20px;
+            font-family: georgia;
+            color: green;
+	}
+	body {
+    background-image: url('2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+}
+.hi3{
+color: blue;
+font-size:24px;
+}
+.output-text {
+			font-size:22px;
+            color: red; /* Make the output text red */
+        }
+		.hi4{
+		position: absolute;
+		top=0;
+		right: 0;
+		width: 500px;
+		height: 500px;
+		}
+    </style>
+</head>
+<body>
+	<img class="hi4" src="triangle1.jpeg" alt="Background Image" >
+	<h3 class="hi2">Enter the lengths of the three sides of the triangle:</h3>
+    <label for="sideA">Enter side A:</label>
+    <input type="number" id="sideA" step="any">
+    <br><br>
+    <label for="sideB">Enter side B:</label>
+    <input type="number" id="sideB" step="any">
+    <br><br>
+    <label for="sideC">Enter side C:</label>
+    <input type="number" id="sideC" step="any">
+    <br><br>
+    <button onclick="calculateArea()">Calculate Area</button>
+
+    <div class="output">
+        <h3 class="hi3">Step by Step Calculation:</h3>
+        <ol id="steps">
+        </ol>
+        <p class="hi output-text" id="result"></p>
+    </div>
+
+    <script>
+        function calculateArea() {
+            const sideA = parseFloat(document.getElementById('sideA').value);
+            const sideB = parseFloat(document.getElementById('sideB').value);
+            const sideC = parseFloat(document.getElementById('sideC').value);
+
+            if (!isNaN(sideA) && !isNaN(sideB) && !isNaN(sideC)) {
+                const s = (sideA + sideB + sideC) / 2;
+                const area = Math.sqrt(s * (s - sideA) * (s - sideB) * (s - sideC));
+
+                const steps = document.getElementById('steps');
+                steps.innerHTML = ''; // Clear previous steps
+
+                const resultElement = document.getElementById('result');
+                resultElement.textContent = `Area of the triangle is ${area.toFixed(2)}`;
+
+                const formulaSteps = [
+                    `Calculate the semi-perimeter (s) = (${sideA} + ${sideB} + ${sideC}) / 2 = ${s.toFixed(2)}`,
+					`Calculate s-a=${s-sideA}`,
+					`Calculate s-b=${s-sideB}`,
+					`Calculate s-c=${s-sideC}`,
+                    `Calculate Area = sqrt(${s} * (${s-sideA}) * (${s-sideB}) * (${s-sideC}))`,
+					`Area = ${area.toFixed(2)}`
+                ];
+
+                formulaSteps.forEach(step => {
+                    const li = document.createElement('li');
+                    li.textContent = step;
+                    steps.appendChild(li);
+                });
+            } 
+			else {
+                alert('Please enter valid side lengths.');
+            }
+        }
+    </script>
+</body>
+</html>
